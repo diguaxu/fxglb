@@ -70,9 +70,9 @@ def postDeruiLimitData(request):
         # 2021.8.2: 新增l2_sigma_productAmt,2022.3.22删除l2_sigma_singleEquityAmt，l2_sigma_singleFIAmt，l2_sigma_singleMixAmt
         l2_sigma_productAmt = df2.loc[df2.限额指标名称 == '产品投资规模'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
         l2_sigma_productCashDelta = df2.loc[df2.限额指标名称 == '业务敞口（cash delta）'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
-        l2_sigma_singleEquityAmt = df2.loc[df2.限额指标名称 == '投资单一权益类产品规模'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
-        l2_sigma_singleFIAmt = df2.loc[df2.限额指标名称 == '投资单一固定收益类产品规模'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
-        l2_sigma_singleMixAmt = df2.loc[df2.限额指标名称 == '投资单一混合类产品投资规模'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
+        # l2_sigma_singleEquityAmt = df2.loc[df2.限额指标名称 == '投资单一权益类产品规模'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
+        # l2_sigma_singleFIAmt = df2.loc[df2.限额指标名称 == '投资单一固定收益类产品规模'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
+        # l2_sigma_singleMixAmt = df2.loc[df2.限额指标名称 == '投资单一混合类产品投资规模'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
         l2_sigma_productLoss = df2.loc[df2.限额指标名称 == '年内投资损失'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
         l2_sigma_productVaR = df2.loc[df2.限额指标名称 == 'VaR(1d, 95%)'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
 
