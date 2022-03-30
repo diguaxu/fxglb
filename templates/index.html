@@ -785,13 +785,13 @@
                             document.getElementById("netLAratio_sup").innerHTML= '<span>'+data[0].netLAratio_sup+'%</span>';
                         }
 
-                        if (data[0].productCashDelta >= 9.5){
+                        if (data[0].productCashDelta >= 4.5){
                             document.getElementById("productCashDelta").innerHTML= '<span style="color: #c10000">'+data[0].amCashDelta+'</span>';
                             document.getElementById("checkResult").innerHTML = '<span>银河期货L2敞口限额超限，情况如下</span>';
                         }else{
                             document.getElementById("productCashDelta").innerHTML= '<span>'+data[0].amCashDelta+'</span>';
                         }
-                        if (data[0].hedgeAmt >= 8){
+                        if (data[0].hedgeAmt >= 7){
                             document.getElementById("hedgeAmt").innerHTML= '<span style="color: #c10000">'+data[0].L3_broke_productAmt+'</span>';
                             document.getElementById("checkResult").innerHTML = '<span>银河期货L2规模限额超限，情况如下</span>';
                         }else{
@@ -841,7 +841,7 @@
                             document.getElementById("l1_assetAmt").innerHTML= '<span>'+data[0].l1_assetAmt+'%</span>';
                         }
 
-                        if (data[0].l2_otc_cashDelta >= 1.65){
+                        if (data[0].l2_otc_cashDelta >= 2.5){
                             document.getElementById("l2_otc_cashDelta").innerHTML= '<span style="color: #c10000">'+data[0].l2_otc_cashDelta+'</span>';
                             document.getElementById("checkResult").innerHTML = '<span>银河德睿L2场外业务敞口限额超限，情况如下</span>';
                         }else{
@@ -947,24 +947,25 @@
                         }else{
                             document.getElementById("l2_sigma_productCashDelta").innerHTML= '<span>'+data[0].l2_sigma_productCashDelta+'</span>';
                         }
-                        if (data[0].l2_sigma_singleEquityAmt > 0.5){
-                            document.getElementById("l2_sigma_singleEquityAmt").innerHTML= '<span style="color: #c10000">'+data[0].l2_sigma_singleEquityAmt+'</span>';
-                            document.getElementById("checkResult").innerHTML = '<span>银河德睿L2金融产品投资业务集中度限额超限，情况如下</span>';
-                        }else{
-                            document.getElementById("l2_sigma_singleEquityAmt").innerHTML= '<span>'+data[0].l2_sigma_singleEquityAmt+'</span>';
-                        }
-                        if (data[0].l2_sigma_singleFIAmt > 1.5){
-                            document.getElementById("l2_sigma_singleFIAmt").innerHTML= '<span style="color: #c10000">'+data[0].l2_sigma_singleFIAmt+'</span>';
-                            document.getElementById("checkResult").innerHTML = '<span>银河德睿L2金融产品投资业务集中度限额超限，情况如下</span>';
-                        }else{
-                            document.getElementById("l2_sigma_singleFIAmt").innerHTML= '<span>'+data[0].l2_sigma_singleFIAmt+'</span>';
-                        }
-                        if (data[0].l2_sigma_singleMixAmt > 1){
-                            document.getElementById("l2_sigma_singleMixAmt").innerHTML= '<span style="color: #c10000">'+data[0].l2_sigma_singleMixAmt+'</span>';
-                            document.getElementById("checkResult").innerHTML = '<span>银河德睿L2金融产品投资业务集中度限额超限，情况如下</span>';
-                        }else{
-                            document.getElementById("l2_sigma_singleMixAmt").innerHTML= '<span>'+data[0].l2_sigma_singleMixAmt+'</span>';
-                        }
+                        {#if (data[0].l2_sigma_singleEquityAmt > 0.5){#}
+                        {#    document.getElementById("l2_sigma_singleEquityAmt").innerHTML= '<span style="color: #c10000">'+data[0].l2_sigma_singleEquityAmt+'</span>';#}
+                        {#    document.getElementById("checkResult").innerHTML = '<span>银河德睿L2金融产品投资业务集中度限额超限，情况如下</span>';#}
+                        {#}else{#}
+                        {#    document.getElementById("l2_sigma_singleEquityAmt").innerHTML= '<span>'+data[0].l2_sigma_singleEquityAmt+'</span>';#}
+                        {#}#}
+                        {#if (data[0].l2_sigma_singleFIAmt > 1.5){#}
+                        {#    document.getElementById("l2_sigma_singleFIAmt").innerHTML= '<span style="color: #c10000">'+data[0].l2_sigma_singleFIAmt+'</span>';#}
+                        {#    document.getElementById("checkResult").innerHTML = '<span>银河德睿L2金融产品投资业务集中度限额超限，情况如下</span>';#}
+                        {#}else{#}
+                        {#    document.getElementById("l2_sigma_singleFIAmt").innerHTML= '<span>'+data[0].l2_sigma_singleFIAmt+'</span>';#}
+                        {#}#}
+                        {#if (data[0].l2_sigma_singleMixAmt > 1){#}
+                        {#    document.getElementById("l2_sigma_singleMixAmt").innerHTML= '<span style="color: #c10000">'+data[0].l2_sigma_singleMixAmt+'</span>';#}
+                        {#    document.getElementById("checkResult").innerHTML = '<span>银河德睿L2金融产品投资业务集中度限额超限，情况如下</span>';#}
+                        {#}else{#}
+                        {#    document.getElementById("l2_sigma_singleMixAmt").innerHTML= '<span>'+data[0].l2_sigma_singleMixAmt+'</span>';#}
+                        {#}#}
+
                         if (data[0].l2_sigma_productLoss >= 0.75){
                             document.getElementById("l2_sigma_productLoss").innerHTML= '<span style="color: #c10000">'+data[0].l2_sigma_productLoss+'</span>';
                             document.getElementById("checkResult").innerHTML = '<span>银河德睿L2金融产品投资业务止损限额超限，情况如下</span>';
@@ -998,12 +999,12 @@
                         }
 
 
-                        {#银河期货L3限额#}
-                        if (data[0].productCashDelta >= 9.5){
-                            document.getElementById("L3_productCashDelta").innerHTML= '<span style="color: #c10000">'+data[0].productCashDelta+'</span>';
-                            document.getElementById("checkResult").innerHTML = '<span>银河期货L3敞口限额超限，情况如下</span>';
+                        银河期货L3限额
+                        if (data[0].productCashDelta >= 15){
+                           document.getElementById("L3_productCashDelta").innerHTML= '<span style="color: #c10000">'+data[0].productCashDelta+'</span>';
+                           document.getElementById("checkResult").innerHTML = '<span>银河期货L3敞口限额超限，情况如下</span>';
                         }else{
-                            document.getElementById("L3_productCashDelta").innerHTML= '<span>'+data[0].productCashDelta+'</span>';
+                           document.getElementById("L3_productCashDelta").innerHTML= '<span>'+data[0].productCashDelta+'</span>';
                         }
                         if (data[0].productAmt >= 15){
                             document.getElementById("L3_productAmt").innerHTML= '<span style="color: #c10000">'+data[0].productAmt+'</span>';
@@ -1031,12 +1032,12 @@
                         }
 
                         {#银河期货L3经管限额#}
-                        if (data[0].L3_broke_productCashDelta >= 6){
-                            document.getElementById("L3_broke_productCashDelta").innerHTML= '<span style="color: #c10000">'+data[0].brokeCashDelta+'</span>';
-                            document.getElementById("checkResult").innerHTML = '<span>银河期货L3经管部敞口限额超限，情况如下</span>';
-                        }else{
-                            document.getElementById("L3_broke_productCashDelta").innerHTML= '<span>'+data[0].brokeCashDelta+'</span>';
-                        }
+                        {#if (data[0].L3_broke_productCashDelta >= 6){#}
+                        {#    document.getElementById("L3_broke_productCashDelta").innerHTML= '<span style="color: #c10000">'+data[0].brokeCashDelta+'</span>';#}
+                        {#    document.getElementById("checkResult").innerHTML = '<span>银河期货L3经管部敞口限额超限，情况如下</span>';#}
+                        {#}else{#}
+                        {#    document.getElementById("L3_broke_productCashDelta").innerHTML= '<span>'+data[0].brokeCashDelta+'</span>';#}
+                        {#}#}
                         if (data[0].L3_broke_productAmt >= 6){
                             document.getElementById("L3_broke_productAmt").innerHTML= '<span style="color: #c10000">'+data[0].L3_broke_productAmt+'</span>';
                             document.getElementById("checkResult").innerHTML = '<span>银河期货L3经管部限额超限，情况如下</span>';
