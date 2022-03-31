@@ -131,9 +131,9 @@ def postDeruiLimitData(request):
 
            'l2_sigma_productAmt': l2_sigma_productAmt,
            'l2_sigma_cashDelta': l2_sigma_cashDelta,
-           'l2_sigma_singleEquityAmt': l2_sigma_singleEquityAmt,
-           'l2_sigma_singleFIAmt': l2_sigma_singleFIAmt,
-           'l2_sigma_singleMixAmt': l2_sigma_singleMixAmt,
+           #'l2_sigma_singleEquityAmt': l2_sigma_singleEquityAmt,
+           #'l2_sigma_singleFIAmt': l2_sigma_singleFIAmt,
+           #'l2_sigma_singleMixAmt': l2_sigma_singleMixAmt,
            'l2_sigma_singlemanagerCost':l2_sigma_singlemanagerCost
            'l2_sigma_SamestrategyCost':l2_sigma_SamestrategyCost
            'l2_sigma_loss': l2_sigma_loss,
