@@ -82,9 +82,9 @@ def postDeruiLimitData(request):
         l2_sigma_var = df2.loc[df2.限额指标名称 == 'VaR(1d, 95%)'].loc[df2.业务类型 == '自营业务（不含金融产品投资）'].指标值.values[0]
 
         #2022.3.22：新增l2_Otc_SpecialdealsCreditAmt,l2_sigma_singlemanagerCost,l2_sigma_SamestrategyCost
-        #l2_otc_creditAmt_Specialdeals = df2.loc[df2.限额指标名称 == '特殊交易类授信限额（占用值）'].loc[df2.业务类型 == '场外业务'].指标值.Values[0]
-        #l2_sigma_singlemanagerCost = df2.loc[df2.限额指标名称 == '同管理人所有产品持有成本上限'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
-        #l2_sigma_SamestrategyCost = df2.loc[df2.限额指标名称 == '同管理人同策略持有成本上限'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
+        l2_otc_creditAmt_Specialdeals = df2.loc[df2.限额指标名称 == '特殊交易类授信限额（占用值）'].loc[df2.业务类型 == '场外业务'].指标值.Values[0]
+        l2_sigma_singlemanagerCost = df2.loc[df2.限额指标名称 == '同管理人所有产品持有成本上限'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
+        l2_sigma_SamestrategyCost = df2.loc[df2.限额指标名称 == '同管理人同策略持有成本上限'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
 
 
 
@@ -114,7 +114,7 @@ def postDeruiLimitData(request):
            'l2_otc_singleNominal': l2_otc_singleNominal,
            'l2_otc_creditAmt_nonSecBank': l2_otc_creditAmt_nonSecBank,
            'l2_otc_creditAmt_secBank': l2_otc_creditAmt_secBank,
-           #'l2_Otc_creditAmt_Specialdeals ':l2_otc_creditAmt_Specialdeals
+           'l2_Otc_creditAmt_Specialdeals ':l2_otc_creditAmt_Specialdeals
            'l2_otc_loss': l2_otc_loss,
            'l2_otc_var': l2_otc_var,
 
@@ -134,8 +134,8 @@ def postDeruiLimitData(request):
            'l2_sigma_singleEquityAmt': l2_sigma_singleEquityAmt,
            'l2_sigma_singleFIAmt': l2_sigma_singleFIAmt,
            'l2_sigma_singleMixAmt': l2_sigma_singleMixAmt,
-           #'l2_sigma_singlemanagerCost':l2_sigma_singlemanagerCost
-           #'l2_sigma_SamestrategyCost':l2_sigma_SamestrategyCost
+           'l2_sigma_singlemanagerCost':l2_sigma_singlemanagerCost
+           'l2_sigma_SamestrategyCost':l2_sigma_SamestrategyCost
            'l2_sigma_loss': l2_sigma_loss,
            'l2_sigma_var': l2_sigma_var,
 
