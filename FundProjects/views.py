@@ -806,6 +806,11 @@ def checkRisk(request):
             dic['l2_otc_singleCreditAmt_secBank'] = round(query.l2_otc_singleCreditAmt_secBank, 4)
             dic['l2_otc_singleNominal'] = round(query.l2_otc_singleNominal, 4)
             dic['l2_otc_creditAmt_nonSecBank'] = round(query.l2_otc_creditAmt_nonSecBank, 4)
+
+            dic['l2_Otc_creditAmt_Specialdeals'] = round(query.l2_Otc_creditAmt_Specialdeals, 4)
+            dic['l2_sigma_singlemanagerCost'] = round(query.l2_sigma_singlemanagerCost, 4)
+            dic['l2_sigma_SamestrategyCost'] = round(query.l2_sigma_SamestrategyCost, 4)
+
             dic['l2_otc_creditAmt_secBank'] = round(query.l2_otc_creditAmt_secBank, 4)
             dic['l2_otc_loss'] = round(query.l2_otc_loss, 4)
             dic['l2_otc_var'] = round(query.l2_otc_var, 4)
