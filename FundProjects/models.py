@@ -177,7 +177,7 @@ class deruiLimitData(models.Model):
     l2_otc_singleNominal = models.FloatField(default=0, verbose_name="单一客户卖出（合同约定方向）场外业务有效名义本金规模")
     l2_otc_creditAmt_nonSecBank = models.FloatField(default=0,verbose_name="场外非券商、银行客户授信限额")
     l2_otc_creditAmt_secBank = models.FloatField(default=0, verbose_name="场外券商、银行客户授信限额")
-    #l2_otc_creditAmt_Specialdeals =models.FloatField(default=0,verbose_name="特定交易类授信限额")
+    l2_otc_creditAmt_Specialdeals =models.FloatField(default=0,verbose_name="特定交易类授信限额")
     l2_otc_loss = models.FloatField(default=0, verbose_name="场外年内损失")
     l2_otc_var = models.FloatField(default=0, verbose_name="场外VaR")
 
@@ -194,11 +194,11 @@ class deruiLimitData(models.Model):
 
     l2_sigma_productAmt = models.FloatField(default=0, verbose_name="金融产品投资业务规模（不包含现金管理类）")
     l2_sigma_productCashDelta= models.FloatField(default=0, verbose_name="金融产品投资业务敞口（不包含现金管理类）")
-    l2_sigma_singleEquityAmt = models.FloatField(default=0, verbose_name="投资单一权益类产品规模")
-    l2_sigma_singleFIAmt = models.FloatField(default=0, verbose_name="投资单一固定收益类产品规模")
-    l2_sigma_singleMixAmt = models.FloatField(default=0, verbose_name="投资单一混合类产品投资规模")
-    #l2_sigma_singlemanagerCost = models.FloatField(default=0,verbose_name="同管理人所有产品持有成本上限")
-    #l2_sigma_SamestrategyCost = models.FloatField(default=0,verbose_name="同管理人同策略持有成本上限")
+    #l2_sigma_singleEquityAmt = models.FloatField(default=0, verbose_name="投资单一权益类产品规模")
+    #l2_sigma_singleFIAmt = models.FloatField(default=0, verbose_name="投资单一固定收益类产品规模")
+    #l2_sigma_singleMixAmt = models.FloatField(default=0, verbose_name="投资单一混合类产品投资规模")
+    l2_sigma_singlemanagerCost = models.FloatField(default=0,verbose_name="同管理人所有产品持有成本上限")
+    l2_sigma_SamestrategyCost = models.FloatField(default=0,verbose_name="同管理人同策略持有成本上限")
     l2_sigma_productLoss = models.FloatField(default=0, verbose_name="金融产品投资年内损失（不包含现金管理类）")
     l2_sigma_productVaR = models.FloatField(default=0, verbose_name="金融产品投资VaR（不包含现金管理类）")
 
