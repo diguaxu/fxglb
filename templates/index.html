@@ -431,30 +431,37 @@
                     <tr>
                     <td colspan="5" align="center" style="background-color: #c6ddfc; font-weight: bold">L1级风险限额</td>
                   </tr>
+{#                  <tr>#}
+{#                    <td rowspan="8"></td>#}
+{#                    <td>规模限额</td>#}
+{#                    <td>融资授信资金规模（非券商银行类客户）（审批值）</td>#}
+{#                    <td>/</td>#}
+{#                    <td id="l1_creditAmt_nonSecBank_usable"></td>#}
+{#                  </tr>#}
                   <tr>
-                    <td rowspan="8"></td>
-                    <td>规模限额</td>
-                    <td>融资授信资金规模（非券商银行类客户）（审批值）</td>
-                    <td>/</td>
-                    <td id="l1_creditAmt_nonSecBank_usable"></td>
-                  </tr>
-                  <tr>
+                    <td rowspan="7"></td>
                     <td>规模限额</td>
                     <td>融资授信资金规模（非券商银行类客户）（占用值）</td>
                     <td>15</td>
                     <td id="l1_creditAmt_nonSecBank_used"></td>
                   </tr>
-                  <tr>
-                    <td>规模限额</td>
-                    <td>融资授信资金规模（券商银行类客户）（审批数）</td>
-                    <td>/</td>
-                    <td id="l1_creditAmt_secBank_usable"></td>
-                  </tr>
+{#                  <tr>#}
+{#                    <td>规模限额</td>#}
+{#                    <td>融资授信资金规模（券商银行类客户）（审批数）</td>#}
+{#                    <td>/</td>#}
+{#                    <td id="l1_creditAmt_secBank_usable"></td>#}
+{#                  </tr>#}
                   <tr>
                     <td>规模限额</td>
                     <td>融资授信资金规模（券商银行类客户）（占用数）</td>
                     <td>100</td>
                     <td id="l1_creditAmt_secBank_used"></td>
+                  </tr>
+                    <tr>
+                    <td>规模限额</td>
+                    <td>特定交易类授信限额</td>
+                    <td>100</td>
+                    <td id="l1_creditAmt_Specialdeals"></td>
                   </tr>
                   <tr>
                     <td>止损限额</td>
@@ -816,6 +823,14 @@
                         }else{
                             document.getElementById("l1_creditAmt_secBank_used").innerHTML= '<span>'+data[0].l1_creditAmt_secBank_used+'</span>';
                         }
+
+                        if (data[0].l1_creditAmt_Specialdeals >= 100){
+                            document.getElementById("l1_creditAmt_Specialdeals").innerHTML= '<span style="color: #c10000">'+data[0].l1_creditAmt_Specialdeals+'</span>';
+                            document.getElementById("checkResult").innerHTML = '<span>银河德睿L1规模限额超限，情况如下</span>';
+                        }else{
+                            document.getElementById("l1_creditAmt_Specialdeals").innerHTML= '<span>'+data[0].l1_creditAmt_Specialdeals+'</span>';
+                        }
+
                         if (data[0].l1_loss >= 1.2){
                             document.getElementById("l1_loss").innerHTML= '<span style="color: #c10000">'+data[0].l1_loss+'</span>';
                             document.getElementById("checkResult").innerHTML = '<span>银河德睿L1止损限额超限，情况如下</span>';
