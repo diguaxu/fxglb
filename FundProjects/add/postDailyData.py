@@ -114,7 +114,7 @@ def postDeruiLimitData(request):
            'l2_otc_singleNominal': l2_otc_singleNominal,
            'l2_otc_creditAmt_nonSecBank': l2_otc_creditAmt_nonSecBank,
            'l2_otc_creditAmt_secBank': l2_otc_creditAmt_secBank,
-           'l2_Otc_creditAmt_Specialdeals ':l2_otc_creditAmt_Specialdeals
+           'l2_otc_creditAmt_Specialdeals ':l2_otc_creditAmt_Specialdeals
            'l2_otc_loss': l2_otc_loss,
            'l2_otc_var': l2_otc_var,
 
@@ -134,8 +134,8 @@ def postDeruiLimitData(request):
            #'l2_sigma_singleEquityAmt': l2_sigma_singleEquityAmt,
            #'l2_sigma_singleFIAmt': l2_sigma_singleFIAmt,
            #'l2_sigma_singleMixAmt': l2_sigma_singleMixAmt,
-           'l2_sigma_singlemanagerCost':l2_sigma_singlemanagerCost
-           'l2_sigma_SamestrategyCost':l2_sigma_SamestrategyCost
+           'l2_sigma_singlemanagerCost':l2_sigma_singlemanagerCost,
+           'l2_sigma_SamestrategyCost':l2_sigma_SamestrategyCost,
            'l2_sigma_loss': l2_sigma_loss,
            'l2_sigma_var': l2_sigma_var,
 
