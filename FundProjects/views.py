@@ -792,10 +792,11 @@ def checkRisk(request):
             dic['reportDate'] = str(datetime.today().year) + '年' + str(datetime.today().month) + '月' + str(
                 datetime.today().day) + '日'
 
-            dic['l1_creditAmt_nonSecBank_usable'] = round(query.l1_creditAmt_nonSecBank_usable, 4)
+            #dic['l1_creditAmt_nonSecBank_usable'] = round(query.l1_creditAmt_nonSecBank_usable, 4)
             dic['l1_creditAmt_nonSecBank_used'] = round(query.l1_creditAmt_nonSecBank_used, 4)
-            dic['l1_creditAmt_secBank_usable'] = round(query.l1_creditAmt_secBank_usable, 4)
+            #dic['l1_creditAmt_secBank_usable'] = round(query.l1_creditAmt_secBank_usable, 4)
             dic['l1_creditAmt_secBank_used'] = round(query.l1_creditAmt_secBank_used, 4)
+            dic['l1_creditAmt_Specialdeals'] = round(query.l1_creditAmt_Specialdeals, 4)
             dic['l1_loss'] = round(query.l1_loss, 4)
             dic['l1_cashDelta'] = round(query.l1_cashDelta, 4)
             dic['l1_var'] = round(query.l1_var, 4)
