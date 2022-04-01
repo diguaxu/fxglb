@@ -34,10 +34,10 @@ def postDeruiLimitData(request):
     if 'L1级风险限额监测表' in data.keys():
         df1 = data['L1级风险限额监测表']
         df1.columns = df1.iloc[1]
-        l1_creditAmt_nonSecBank_usable = df1.loc[df1.限额指标名称 == '融资授信资金规模（非券商银行类客户）（审批值）'].指标值.values[0]
-        l1_creditAmt_nonSecBank_used = df1.loc[df1.限额指标名称 == '融资授信资金规模（非券商银行类客户）（占用值）'].指标值.values[0]
-        l1_creditAmt_secBank_usable = df1.loc[df1.限额指标名称 == '融资授信资金规模（券商银行类客户）（审批数）'].指标值.values[0]
-        l1_creditAmt_secBank_used = df1.loc[df1.限额指标名称 == '融资授信资金规模（券商银行类客户）（占用数）'].指标值.values[0]
+        #l1_creditAmt_nonSecBank_usable = df1.loc[df1.限额指标名称 == '融资授信资金规模（非券商银行类客户）（审批值）'].指标值.values[0]
+        l1_creditAmt_nonSecBank_used = df1.loc[df1.限额指标名称 == '融资授信资金规模（非券商银行类客户）'].指标值.values[0]
+        #l1_creditAmt_secBank_usable = df1.loc[df1.限额指标名称 == '融资授信资金规模（券商银行类客户）（审批数）'].指标值.values[0]
+        l1_creditAmt_secBank_used = df1.loc[df1.限额指标名称 == '融资授信资金规模（券商银行类客户）'].指标值.values[0]
         l1_loss = df1.loc[df1.限额指标名称 == '年内损失'].指标值.values[0]
         l1_cashDelta = df1.loc[df1.限额指标名称 == '敞口（cash delta）'].指标值.values[0]
         l1_var = df1.loc[df1.限额指标名称 == 'VaR (1d, 95%)'].指标值.values[0]
@@ -86,8 +86,8 @@ def postDeruiLimitData(request):
         l2_sigma_singlemanagerCost = df2.loc[df2.限额指标名称 == '同管理人所有产品持有成本上限'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
         l2_sigma_SamestrategyCost = df2.loc[df2.限额指标名称 == '同管理人同策略持有成本上限'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
 
-
-
+        # 2022.4.1：新增l1_Otc_SpecialdealsCreditAmt,l2_sigma_singlemanagerCost,l2_sigma_SamestrategyCost
+        l1_creditAmt_Specialdeals = df2.loc[df2.限额指标名称 == '特定交易类授信限额'].指标值.values[0]
 
     if '买断回购限额及减值' in data.keys():
         df3 = data['买断回购限额及减值']
@@ -99,14 +99,16 @@ def postDeruiLimitData(request):
 
 
     dic = {'date': datetime.strptime(str(date), "%Y%m%d"),
-           'l1_creditAmt_nonSecBank_usable': l1_creditAmt_nonSecBank_usable,
+           #'l1_creditAmt_nonSecBank_usable': l1_creditAmt_nonSecBank_usable,
            'l1_creditAmt_nonSecBank_used': l1_creditAmt_nonSecBank_used,
-           'l1_creditAmt_secBank_usable': l1_creditAmt_secBank_usable,
+           #'l1_creditAmt_secBank_usable': l1_creditAmt_secBank_usable,
+           'l1_creditAmt_Specialdeals': l1_creditAmt_Specialdeals,
            'l1_creditAmt_secBank_used': l1_creditAmt_secBank_used,
            'l1_loss': l1_loss,
            'l1_cashDelta': l1_cashDelta,
            'l1_var': l1_var,
            'l1_assetAmt': l1_assetAmt,
+
 
            'l2_otc_cashDelta': l2_otc_cashDelta,
            'l2_otc_singleCreditAmt_nonSecBank': l2_otc_singleCreditAmt_nonSecBank,
