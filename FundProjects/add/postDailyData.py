@@ -82,7 +82,7 @@ def postDeruiLimitData(request):
         l2_sigma_var = df2.loc[df2.限额指标名称 == 'VaR(1d, 95%)'].loc[df2.业务类型 == '自营业务（不含金融产品投资）'].指标值.values[0]
 
         #2022.3.22：新增l2_Otc_SpecialdealsCreditAmt,l2_sigma_singlemanagerCost,l2_sigma_SamestrategyCost
-        l2_otc_creditAmt_Specialdeals = df2.loc[df2.限额指标名称 == '特殊交易类授信限额（占用值）'].loc[df2.业务类型 == '场外业务'].指标值.Values[0]
+        l2_otc_creditAmt_Specialdeals = df2.loc[df2.限额指标名称 == '特定交易类授信限额（占用值）'].loc[df2.业务类型 == '场外业务'].指标值.values[0]
         l2_sigma_singlemanagerCost = df2.loc[df2.限额指标名称 == '同管理人所有产品持有成本上限'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
         l2_sigma_SamestrategyCost = df2.loc[df2.限额指标名称 == '同管理人同策略持有成本上限'].loc[df2.业务类型 == '金融产品投资（不包含现金管理类）'].指标值.values[0]
 
@@ -114,7 +114,7 @@ def postDeruiLimitData(request):
            'l2_otc_singleNominal': l2_otc_singleNominal,
            'l2_otc_creditAmt_nonSecBank': l2_otc_creditAmt_nonSecBank,
            'l2_otc_creditAmt_secBank': l2_otc_creditAmt_secBank,
-           'l2_otc_creditAmt_Specialdeals ':l2_otc_creditAmt_Specialdeals
+           'l2_otc_creditAmt_Specialdeals':l2_otc_creditAmt_Specialdeals,
            'l2_otc_loss': l2_otc_loss,
            'l2_otc_var': l2_otc_var,
 
@@ -148,7 +148,7 @@ def postDeruiLimitData(request):
            }
 
     dfLimit = pd.DataFrame(dic, index=[0])
-    engine = create_engine("mysql+pymysql://root:123456@10.10.9.236/djangotest", encoding="utf8")
+    engine = create_engine("mysql+pymysql://root:123456@10.10.20.4/djangotest", encoding="utf8")
     pd.io.sql.to_sql(dfLimit.reset_index(drop=True), 'deruilimitdata', engine, schema='djangotest', if_exists='append')
 
     return JsonResponse({
@@ -284,7 +284,7 @@ def postDeruiSectorData(request):
         dfData['ommBack'] = df4['预估返还（本年累计）'].iloc[0]
         dfData['actOmmBack'] = df4['期货实际返还（本年累计）'].iloc[0]
         dfData['actOmmBackOpt'] = df4['期权实际返还（本年累计）'].iloc[0]
-    engine = create_engine("mysql+pymysql://root:123456@10.10.9.236/djangotest", encoding="utf8")
+    engine = create_engine("mysql+pymysql://root:123456@10.10.20.4/djangotest", encoding="utf8")
     pd.io.sql.to_sql(dfData.reset_index(drop=True), 'deruisectordata', engine, schema='djangotest', if_exists='append')
     pd.io.sql.to_sql(dfCredit.reset_index(drop=True), 'deruicreditdata', engine, schema='djangotest',
                      if_exists='append')
@@ -335,7 +335,7 @@ def postFinanceData(request):
     dfData = pd.DataFrame(dic, index=[0])
     dfData = dfData.replace('', float('nan'))
 
-    engine = create_engine("mysql+pymysql://root:123456@10.10.9.236/djangotest", encoding="utf8")
+    engine = create_engine("mysql+pymysql://root:123456@10.10.20.4/djangotest", encoding="utf8")
     pd.io.sql.to_sql(dfData.reset_index(drop=True), 'dailyfinancedata', engine, schema='djangotest', if_exists='append')
 
     return JsonResponse({
@@ -398,7 +398,7 @@ def postRiskDailyData(request):
 
     dfData['date'] = datetime.strptime(str(date), "%Y-%m-%d")
 
-    engine = create_engine("mysql+pymysql://root:123456@10.10.9.236/djangotest", encoding="utf8")
+    engine = create_engine("mysql+pymysql://root:123456@10.10.20.4/djangotest", encoding="utf8")
     pd.io.sql.to_sql(dfData.reset_index(drop=True), 'productdailyreport', engine, schema='djangotest',
                      if_exists='append')
 
