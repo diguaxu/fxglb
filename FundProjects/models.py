@@ -165,14 +165,13 @@ class deruiLimitData(models.Model):
     #l1_creditAmt_nonSecBank_usable = models.FloatField(default=0, verbose_name="融资授信资金规模（非券商银行类客户）（审批值）")
     l1_creditAmt_nonSecBank_used = models.FloatField(default=0, verbose_name="融资授信资金规模（非券商银行类客户）（占用值）")
     #l1_creditAmt_secBank_usable = models.FloatField(default=0, verbose_name="融资授信资金规模（券商银行类客户）（审批数）")
-
     l1_creditAmt_secBank_used = models.FloatField(default=0, verbose_name="融资授信资金规模（券商银行类客户）（占用数）")
     l1_creditAmt_Specialdeals = models.FloatField(default=0, verbose_name="特定交易类授信限额")
     l1_loss = models.FloatField(default=0, verbose_name="年内损失")
     l1_cashDelta = models.FloatField(default=0, verbose_name="敞口")
     l1_var = models.FloatField(default=0, verbose_name="VaR")
     l1_assetAmt = models.FloatField(default=0, verbose_name="一级流动性储备资产规模/自有资产总额")
-
+    #2022.4.6新增L1特殊交易类授信限额
     l2_otc_cashDelta = models.FloatField(default=0, verbose_name="场外业务敞口")
     l2_otc_singleCreditAmt_nonSecBank = models.FloatField(default=0, verbose_name="单一客户场外业务授信规模(除券商、银行）")
     l2_otc_singleCreditAmt_secBank = models.FloatField(default=0,verbose_name="单一客户场外业务授信规模（券商、银行）")
