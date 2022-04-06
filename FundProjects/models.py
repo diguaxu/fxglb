@@ -165,6 +165,7 @@ class deruiLimitData(models.Model):
     #l1_creditAmt_nonSecBank_usable = models.FloatField(default=0, verbose_name="融资授信资金规模（非券商银行类客户）（审批值）")
     l1_creditAmt_nonSecBank_used = models.FloatField(default=0, verbose_name="融资授信资金规模（非券商银行类客户）（占用值）")
     #l1_creditAmt_secBank_usable = models.FloatField(default=0, verbose_name="融资授信资金规模（券商银行类客户）（审批数）")
+
     l1_creditAmt_secBank_used = models.FloatField(default=0, verbose_name="融资授信资金规模（券商银行类客户）（占用数）")
     l1_creditAmt_Specialdeals = models.FloatField(default=0, verbose_name="特定交易类授信限额")
     l1_loss = models.FloatField(default=0, verbose_name="年内损失")
