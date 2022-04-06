@@ -808,7 +808,7 @@ def checkRisk(request):
             dic['l2_otc_singleNominal'] = round(query.l2_otc_singleNominal, 4)
             dic['l2_otc_creditAmt_nonSecBank'] = round(query.l2_otc_creditAmt_nonSecBank, 4)
 
-            dic['l2_Otc_creditAmt_Specialdeals'] = round(query.l2_Otc_creditAmt_Specialdeals, 4)
+            dic['l2_otc_creditAmt_Specialdeals'] = round(query.l2_otc_creditAmt_Specialdeals, 4)
             dic['l2_sigma_singlemanagerCost'] = round(query.l2_sigma_singlemanagerCost, 4)
             dic['l2_sigma_SamestrategyCost'] = round(query.l2_sigma_SamestrategyCost, 4)
 
@@ -833,9 +833,9 @@ def checkRisk(request):
                 dic['l2_sigma_productCashDelta'] = '/'
             else:
                 dic['l2_sigma_productCashDelta'] = round(query.l2_sigma_productCashDelta, 4)
-            dic['l2_sigma_singleEquityAmt'] = round(query.l2_sigma_singleEquityAmt, 4)
-            dic['l2_sigma_singleFIAmt'] = round(query.l2_sigma_singleFIAmt, 4)
-            dic['l2_sigma_singleMixAmt'] = round(query.l2_sigma_singleMixAmt, 4)
+            #  dic['l2_sigma_singleEquityAmt'] = round(query.l2_sigma_singleEquityAmt, 4)
+            #  dic['l2_sigma_singleFIAmt'] = round(query.l2_sigma_singleFIAmt, 4)
+            #  dic['l2_sigma_singleMixAmt'] = round(query.l2_sigma_singleMixAmt, 4)
             dic['l2_sigma_productLoss'] = round(query.l2_sigma_productLoss, 4)
             if query.l2_sigma_productVaR is None:
                 dic['l2_sigma_productVaR'] = '/'
@@ -1298,4 +1298,3 @@ def addProduct(request):
         "data": results,
         "total": 0
     })
-
