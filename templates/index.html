@@ -885,6 +885,7 @@
                             document.getElementById("checkResult").innerHTML = '<span>银河德睿L2场外业务授信限额超限，情况如下</span>';
                         }else{
                             document.getElementById("l2_otc_creditAmt_secBank").innerHTML= '<span>'+data[0].l2_otc_creditAmt_secBank+'</span>';
+						}
                         if (data[0].l2_otc_creditAmt_Specialdeals > 100){
                             document.getElementById("l2_otc_creditAmt_Specialdeals").innerHTML= '<span style="color: #c10000">'+data[0].l2_otc_creditAmt_Specialdeals+'</span>';
                             document.getElementById("checkResult").innerHTML = '<span>银河德睿L2场外业务授信限额超限，情况如下</span>';
@@ -990,12 +991,13 @@
                             document.getElementById("checkResult").innerHTML = '<span>银河德睿L2金融产品业务集中度限额超限，情况如下</span>';
                         }else{
                             document.getElementById("l2_sigma_singlemanagerCost").innerHTML= '<span>'+data[0].l2_sigma_singlemanagerCost+'</span>';
+						}
                         if (data[0].l2_sigma_SamestrategyCost >= 2){
                             document.getElementById("l2_sigma_SamestrategyCost").innerHTML= '<span style="color: #c10000">'+data[0].l2_sigma_SamestrategyCost+'</span>';
                             document.getElementById("checkResult").innerHTML = '<span>银河德睿L2金融产品投资集中度限额超限，情况如下</span>';
                         }else{
                             document.getElementById("l2_sigma_SamestrategyCost").innerHTML= '<span>'+data[0].l2_sigma_SamestrategyCost+'</span>';
-
+						}
                         if (data[0].l2_sigma_productLoss >= 0.75){
                             document.getElementById("l2_sigma_productLoss").innerHTML= '<span style="color: #c10000">'+data[0].l2_sigma_productLoss+'</span>';
                             document.getElementById("checkResult").innerHTML = '<span>银河德睿L2金融产品投资业务止损限额超限，情况如下</span>';
