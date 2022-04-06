@@ -815,8 +815,7 @@
                             document.getElementById("l1_creditAmt_nonSecBank_used").innerHTML= '<span>'+data[0].l1_creditAmt_nonSecBank_used+'</span>';
                         }
 
-                        document.getElementById("l1_creditAmt_secBank_usable").innerHTML= '<span>'+data[0].l1_creditAmt_secBank_usable+'</span>';
-
+                       
                         if (data[0].l1_creditAmt_secBank_used >= 100){
                             document.getElementById("l1_creditAmt_secBank_used").innerHTML= '<span style="color: #c10000">'+data[0].l1_creditAmt_secBank_used+'</span>';
                             document.getElementById("checkResult").innerHTML = '<span>银河德睿L1规模限额超限，情况如下</span>';
