@@ -274,10 +274,10 @@ class deruisectordata(models.Model):
     sigmaVar_pro = models.FloatField(default=0, verbose_name="自营业务（产品投资）VaR（1d，95%）")
     sigmaPnl_pro = models.FloatField(default=0, verbose_name="自营业务（产品投资）当年盈亏")
 
-    sigmaAmt_vol = models.FloatField(default=0, verbose_name="自营业务（波动率策略）占用资金规模")
-    sigmaCashDelta_vol = models.FloatField(default=0, verbose_name="自营业务（波动率策略）敞口（Delta金额）")
-    sigmaVar_vol = models.FloatField(default=0, verbose_name="自营业务（波动率策略）VaR（1d，95%）")
-    sigmaPnl_vol = models.FloatField(default=0, verbose_name="自营业务（波动率策略）当年盈亏")
+    sigmaAmt_vol = models.FloatField(default=0, verbose_name="自营业务（除产品外）占用资金规模")
+    sigmaCashDelta_vol = models.FloatField(default=0, verbose_name="自营业务（除产品外）敞口（Delta金额）")
+    sigmaVar_vol = models.FloatField(default=0, verbose_name="自营业务（除产品外）VaR（1d，95%）")
+    sigmaPnl_vol = models.FloatField(default=0, verbose_name="自营业务（除产品外）当年盈亏")
 
     sigmaAmt = models.FloatField(default=0, verbose_name="自营业务占用资金规模")
     sigmaCashDelta = models.FloatField(default=0, verbose_name="自营业务敞口（Delta金额）")
