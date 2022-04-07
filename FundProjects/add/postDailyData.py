@@ -227,10 +227,10 @@ def postDeruiSectorData(request):
         dic['sigmaVar_pro'] = df1.loc[df1.指标名称 == '自营业务（产品投资）VaR（1d，95%）'].执行值.values[0]
         dic['sigmaPnl_pro'] = df1.loc[df1.指标名称 == '自营业务（产品投资）当年盈亏'].执行值.values[0]
 
-        dic['sigmaAmt_vol'] = df1.loc[df1.指标名称 == '自营业务（波动率策略）占用资金规模'].执行值.values[0]
-        dic['sigmaCashDelta_vol'] = df1.loc[df1.指标名称 == '自营业务（波动率策略）敞口（Delta金额）'].执行值.values[0]
-        dic['sigmaVar_vol'] = df1.loc[df1.指标名称 == '自营业务（波动率策略）VaR（1d，95%）'].执行值.values[0]
-        dic['sigmaPnl_vol'] = df1.loc[df1.指标名称 == '自营业务（波动率策略）当年盈亏'].执行值.values[0]
+        dic['sigmaAmt_vol'] = df1.loc[df1.指标名称 == '自营业务（除产品外）占用资金规模'].执行值.values[0]
+        dic['sigmaCashDelta_vol'] = df1.loc[df1.指标名称 == '自营业务（除产品外）敞口（Delta金额）'].执行值.values[0]
+        dic['sigmaVar_vol'] = df1.loc[df1.指标名称 == '自营业务（除产品外）VaR（1d，95%）'].执行值.values[0]
+        dic['sigmaPnl_vol'] = df1.loc[df1.指标名称 == '自营业务（除产品外）当年盈亏'].执行值.values[0]
 
         dic['sigmaAmt'] = df1.loc[df1.指标名称 == '自营业务占用资金规模'].执行值.values[0]
         dic['sigmaCashDelta'] = df1.loc[df1.指标名称 == '自营业务敞口（Delta金额）'].执行值.values[0]
