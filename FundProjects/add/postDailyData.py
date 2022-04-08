@@ -99,9 +99,9 @@ def postDeruiLimitData(request):
 
 
     dic = {'date': datetime.strptime(str(date), "%Y%m%d"),
-           #'l1_creditAmt_nonSecBank_usable': l1_creditAmt_nonSecBank_usable,
+           'l1_creditAmt_nonSecBank_usable': l1_creditAmt_nonSecBank_usable,
            'l1_creditAmt_nonSecBank_used': l1_creditAmt_nonSecBank_used,
-           #'l1_creditAmt_secBank_usable': l1_creditAmt_secBank_usable,
+           'l1_creditAmt_secBank_usable': l1_creditAmt_secBank_usable,
            'l1_creditAmt_secBank_used': l1_creditAmt_secBank_used,
            'l1_creditAmt_Specialdeals': l1_creditAmt_Specialdeals,
            'l1_loss': l1_loss,
