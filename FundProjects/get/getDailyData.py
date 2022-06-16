@@ -283,7 +283,7 @@ def getDailyData(request):
         dic['productNum'] = len(pnl)
         dic['productAmt'] = round(
             (pnl.aggregate(Sum('buyCashAmount')).get('buyCashAmount__sum') - pnl.aggregate(
-                Sum('sellCost')).get('sellCost__sum')), 2) / 10000
+                Sum('sellCost')).get('sellCost__sum')) / 10000, 2)
 
         pnlSum = pnl.aggregate(Sum('todayPnl'))
         if pnlSum.get('todayPnl__sum') is not None:
